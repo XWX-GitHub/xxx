@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <style>
+        div{
+            width: 100px;
+            height: 50px;
+            background-color: #f0f0f0;
+        }
+        input{
+            width: 200px;
+            height: 200px;
+            background-color: lightcoral;
+        }
+    </style> -->
+</head>
+
+<body>
+    <!-- <div>xxxx</div>
+    <input type="file" name="" id="">
+    <script>
+        let f = (a=10,b=20)=>{
+            let data = {c:a,d:b}
+            let {c,d} = data
+            console.log(`${a}+${b}=${a+b}`)
+            const x = "x"
+            console.log(x)
+        }
+
+        f(5,15)
+        // document.querySelector("div").onclick=(event)=>{
+        //     console.log(event.target)
+        // }
+        // document.querySelector("body").addEventListener("click",(event)=>{
+        //     const x = "y"
+        //     console.log(event,event.target,x)
+
+            
+        // })
+        let input = document.querySelector("input");
+        let Arr = [".jpg",".jpeg",".png",".webp",".gif",".txt"]
+        input.onchange =function(event){
+            console.log(event)
+            for (let i = 0; i < Arr.length; i++) {
+                if(this.value.indexOf(Arr[i])!=-1){
+                    console.log(Arr[i])
+                }               
+            }          
+        }
+    </script> -->
+
+    <!-- <script>
+        class App{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+                this.data = {result:['红色','蓝色','绿色']};
+            }
+            init(){
+                console.log(this.data)
+                console.log(this.name)
+            }
+            foo(){
+                console.log('foo')
+            }
+        }
+        let app = new App()
+
+        class Bpp extends App{
+            constructor(color){       
+                super('xwx');
+                this.color = color;
+            }
+            saySuccess(){
+                console.log(`${this.name} is success`,this.color)
+            }
+        }
+
+        let bpp = new Bpp('red')
+        bpp.init();
+        bpp.saySuccess()
+
+    </script> -->
+    <!-- <style>
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                cursor: move;
+                transform: translateX(0px) translateY(0px);
+                line-height: 100px;
+                text-align: center;
+            }
+            .box > span {
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50%;
+                background-color: #fff;
+                vertical-align: middle;
+                transition: all 0.2s;
+            }
+        </style>
+    <div class="box" id="app"><span></span></div>
+    <script>
+        class App {
+            constructor(option) {
+                this.currentTime = new Data();
+                this.box = document.getElementById(option.id);
+                this.boll = false;
+                this.startX = 0;
+                this.startY = 0;
+                this.moveX = 0;
+                this.moveY = 0;
+                this.curX = 0;
+                this.curY = 0;
+                console.log(this)
+            }
+            random() {
+                return Math.round(Math.random() * 50 + 50);
+            }
+            move() {
+                this.box.onmousedown = (event) => {
+                    this.bool = true;
+                    this.startX = event.pageX;
+                    this.startY = event.pageY;
+
+                }
+
+                document.onmousemove = (event) => {
+                    if (this.bool) {
+                        this.moveX = event.pageX - this.startX + this.curX;
+                        this.moveY = event.pageY - this.startY + this.curY;
+                        this.box.style.transfrom = `translateX(${this.moveX}px)`;
+                        let size = this.random();
+                        this.box.querySelector('span').style.cssText = `width:${size}px;height:${size}px;`;
+
+                    }
+                }
+
+                document.onmouseup = () => {
+                    this.bool = false;
+                    this.curX = this.moveX;
+                    this.curY = this.moveY;
+                }
+            }
+        }
+
+        let app = new App({
+            id: "app"
+        })
+
+        app.move()
+        
+    </script> -->
+
+    <!-- <script>
+       
+        let p = new Promise(function (resolve,reject,bool) {
+            if (bool) {
+                resolve()
+            } else {
+                reject()
+            }
+        })
+        p.then(function (e) {
+            console.log(e)
+        }, function (e) {
+            console.log(e)
+        })
+    </script> -->
+
+    <!-- <style>
+        body{
+            transform:rotate();
+            box-sizing: border-box;
+
+        }
+    </style> -->
+
+    <script>
+        // var support_css3 = (function () {
+        //     var div = document.createElement('div'),
+        //         vendors = 'Ms O Moz Webkit'.split(' '),
+        //         len = vendors.length;
+
+        //     return function (prop) {
+        //         if (prop in div.style) return true;
+
+        //         prop = prop.replace(/^[a-z]/, function (val) {
+        //             return val.toUpperCase();
+        //         });
+
+        //         while (len--) {
+        //             if (vendors[len] + prop in div.style) {
+        //                 return true;
+        //             }
+        //         }
+        //         return false;
+        //     };
+        // })();
+
+    //     var C3 = function isPropertySupported(property) {
+    //         return property in document.body.style;
+    //     }
+        
+     </script>
+
+     <!-- <canvas id="canvasId"> </canvas>
+
+     <script>
+        let canvas = document.querySelector("#canvasId");
+        canvas.width = 500;
+        canvas.height = 400;
+        let ctx = canvas.getContext('2d');
+        function drawCircle(color,x,y,r,start,end){
+            ctx.beginPath();
+            ctx.fillStyle = color;
+            ctx.moveTo(x,y);
+            ctx.arc(x,y,r,2 * Math.PI/360 * start,2 * Math.PI/360 * end,false);
+            ctx.closePath();
+            ctx.fill();
+        }  
+        function drawText(color,text,r,angle){
+            let y = r*Math.sin(2*Math.PI/360*angle)+200;
+            let x = r*Math.cos(2*Math.PI/360*angle)+200;
+            console.log(x,y);
+            ctx.beginPath();
+            ctx.font='20px "宋体"';
+            ctx.textAlign = 'center';
+            ctx.fillText(text,x,y);
+            ctx.closePath();
+
+        }
+        function drawLine(color,r,angle){
+            let y = r*Math.sin(2*Math.PI/360*angle)+200;
+            let x = r*Math.cos(2*Math.PI/360*angle)+200;
+
+            ctx.beginPath();
+            ctx.strokeStyle = color;
+            ctx.moveTo(200,200);
+            ctx.lineTo(x,y);
+            ctx.closePath();
+            ctx.stroke();
+        }
+
+        let startAngle = 0;
+        let endAngle = 0;
+        for (var i = 0; i < data.length; i++) {
+            let ang = startAngle + 50;
+            drawText(data[i].color,data[i].text,180,ang);
+            drawText(data[i].color,data[i].pers,180,ang);
+            drawLine(data[i].color,180,ang);
+            endAngle = data[i].pers*360+startAngle;
+            drawCircle(data[i].color,200,200,80, startAngle ,endAngle);
+            startAngle = endAngle;
+        }
+     </script> -->
+
+     
+</body>
+
+</html>
